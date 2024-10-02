@@ -1,1 +1,129 @@
+<div class="checklist-container">
+  <h1 class="checklist-title">Чек-лист: Создание рекламных фотографий</h1>
+  <div class="checklist-section">
+    <h2>1. Минимальные атрибуты для стильной рекламы:</h2>
+    <p><strong>Фон:</strong> Используйте цветную бумагу, ткани, постеры или картон для создания однотонного фона.</p>
+    <p><strong>Освещение:</strong> Кольцевые лампы или настольные лампы с рассеивателями создадут мягкое освещение.</p>
+    <p><strong>Текстуры и детали:</strong> Камни, ракушки, листья помогут добавить интересные текстурные акценты.</p>
+  </div>
+  <div class="checklist-section">
+    <h2>2. Фуд-фотография:</h2>
+    <p><strong>Простая посуда и текстиль:</strong> Минималистичные тарелки и салфетки создадут уют.</p>
+    <p><strong>Свежие продукты:</strong> Яркие овощи и фрукты добавят цвета и свежести.</p>
+    <p><strong>Инструменты:</strong> Вилки, ножи, кружки добавят естественности композиции.</p>
+  </div>
+  <div class="checklist-section">
+    <h2>3. Косметическая или продуктовая реклама:</h2>
+    <p><strong>Минималистичные подставки:</strong> Книги, зеркала помогут создать стильные композиции.</p>
+    <p><strong>Фоны с узорами:</strong> Добавьте текстуру с помощью узорчатых скатертей.</p>
+    <p><strong>Цветы и зелень:</strong> Свежие цветы придадут натуральность и гармонию.</p>
+  </div>
+  <!-- Другие секции -->
+</div>
 
+<style>
+  .checklist-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff99cc 40%, #6EC1E4 100%);
+    border-radius: 10px;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .checklist-title {
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .checklist-section {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .checklist-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #ff99cc;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 2px;
+    background-color: #6EC1E4;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* Wow-эффекты */
+  .checklist-container {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Анимации */
+  .checklist-section {
+    position: relative;
+  }
+
+  .checklist-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 153, 204, 0.2);
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .checklist-section:hover::before {
+    width: 100%;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.checklist-section');
+    sections.forEach(section => {
+      section.addEventListener('mouseover', () => {
+        section.style.backgroundColor = '#f5f5f5';
+      });
+      section.addEventListener('mouseout', () => {
+        section.style.backgroundColor = 'white';
+      });
+    });
+  });
+</script>
