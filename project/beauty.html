@@ -1,1 +1,169 @@
+<div class="landing-container">
+    <!-- Главный экран с заголовком -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="brand-title">Когтевой Сервис</h1>
+            <p class="brand-subtitle">Идеальный уход за когтями ваших питомцев</p>
+        </div>
+        <div class="hero-flowers">
+            <img src="flower-background.png" class="flower-back" alt="Цветы задний план">
+            <img src="flower-foreground.png" class="flower-front" alt="Цветы передний план">
+        </div>
+    </section>
 
+    <!-- Секция с услугами -->
+    <section class="services-section">
+        <h2 class="section-title">Услуги</h2>
+        <div class="service-card">
+            <img src="service1.jpg" alt="Услуга 1">
+            <div class="service-info">
+                <h3>Обрезка когтей</h3>
+                <p>Безопасная и профессиональная обрезка когтей для всех пород.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="service2.jpg" alt="Услуга 2">
+            <div class="service-info">
+                <h3>Полировка когтей</h3>
+                <p>Делаем когти ухоженными и блестящими без боли и стресса.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="benefits-section">
+        <h2 class="section-title">Преимущества</h2>
+        <div class="benefit">
+            <img src="benefit1.png" alt="Чашка кофе">
+            <p>Теплая атмосфера</p>
+        </div>
+        <div class="benefit">
+            <img src="benefit2.png" alt="Мастер">
+            <p>Опытные мастера</p>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews-section">
+        <h2 class="section-title">Отзывы</h2>
+        <div class="review-card">
+            <p>«Отличный сервис! Мой питомец был в полном восторге!»</p>
+            <p><strong>- Ольга И.</strong></p>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section class="gallery-section">
+        <h2 class="section-title">Галерея</h2>
+        <div class="gallery">
+            <img src="gallery1.jpg" alt="Фото 1">
+            <img src="gallery2.jpg" alt="Фото 2">
+            <img src="gallery3.jpg" alt="Фото 3">
+        </div>
+    </section>
+</div>
+
+<style>
+.landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+}
+
+.hero-flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-flowers img {
+    position: absolute;
+    width: 40%;
+}
+
+.flower-back {
+    top: 0;
+    left: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.flower-front {
+    bottom: 0;
+    right: 0;
+    animation: float 3s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.service-card, .benefit, .review-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .service-card, .benefit, .review-card {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        width: 45%;
+    }
+}
+  
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const flowers = document.querySelectorAll('.flower-front');
+
+    flowers.forEach((flower) => {
+        flower.style.animation = "float 3s ease-in-out infinite";
+    });
+});
+  
+</script>
