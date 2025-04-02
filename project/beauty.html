@@ -1,169 +1,233 @@
-<div class="landing-container">
-    <!-- Главный экран с заголовком -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="brand-title">Когтевой Сервис</h1>
-            <p class="brand-subtitle">Идеальный уход за когтями ваших питомцев</p>
-        </div>
-        <div class="hero-flowers">
-            <img src="flower-background.png" class="flower-back" alt="Цветы задний план">
-            <img src="flower-foreground.png" class="flower-front" alt="Цветы передний план">
-        </div>
-    </section>
-
-    <!-- Секция с услугами -->
-    <section class="services-section">
-        <h2 class="section-title">Услуги</h2>
-        <div class="service-card">
-            <img src="service1.jpg" alt="Услуга 1">
-            <div class="service-info">
-                <h3>Обрезка когтей</h3>
-                <p>Безопасная и профессиональная обрезка когтей для всех пород.</p>
-            </div>
-        </div>
-        <div class="service-card">
-            <img src="service2.jpg" alt="Услуга 2">
-            <div class="service-info">
-                <h3>Полировка когтей</h3>
-                <p>Делаем когти ухоженными и блестящими без боли и стресса.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Преимущества -->
-    <section class="benefits-section">
-        <h2 class="section-title">Преимущества</h2>
-        <div class="benefit">
-            <img src="benefit1.png" alt="Чашка кофе">
-            <p>Теплая атмосфера</p>
-        </div>
-        <div class="benefit">
-            <img src="benefit2.png" alt="Мастер">
-            <p>Опытные мастера</p>
-        </div>
-    </section>
-
-    <!-- Отзывы -->
-    <section class="reviews-section">
-        <h2 class="section-title">Отзывы</h2>
-        <div class="review-card">
-            <p>«Отличный сервис! Мой питомец был в полном восторге!»</p>
-            <p><strong>- Ольга И.</strong></p>
-        </div>
-    </section>
-
-    <!-- Галерея -->
-    <section class="gallery-section">
-        <h2 class="section-title">Галерея</h2>
-        <div class="gallery">
-            <img src="gallery1.jpg" alt="Фото 1">
-            <img src="gallery2.jpg" alt="Фото 2">
-            <img src="gallery3.jpg" alt="Фото 3">
-        </div>
-    </section>
-</div>
-
-<style>
-.landing-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Kosmetyczny Olecko</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style> 
+       /* Основные стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-.hero-section {
-    position: relative;
-    text-align: center;
-    padding: 100px 0;
+header {
+  background: #ff8c00;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-.hero-content {
-    z-index: 2;
-    position: relative;
+header h1 {
+  font-size: 2.5rem;
 }
 
-.hero-flowers {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+button {
+  background: #ff6200;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.hero-flowers img {
-    position: absolute;
-    width: 40%;
+button:hover {
+  background: #ff4500;
 }
 
-.flower-back {
-    top: 0;
-    left: 0;
-    animation: fadeIn 2s ease-in-out;
+.language-panel {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.flower-front {
-    bottom: 0;
-    right: 0;
-    animation: float 3s infinite;
+#services ul, #testimonials div, #contact p {
+  margin: 20px;
+  padding: 10px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+#benefits ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+#benefits li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
-.section-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #fff;
+#benefits .icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
 }
 
-.service-card, .benefit, .review-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    color: #fff;
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 20px;
 }
 
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+footer p {
+  margin: 0;
 }
 
-.gallery img {
-    width: 30%;
-    border-radius: 5px;
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
 }
 
-@media screen and (max-width: 768px) {
-    .service-card, .benefit, .review-card {
-        flex-direction: column;
-    }
+ </style>
+    <script> const translations = {
+  pl: {
+    "header-title": "Salon Piękności",
+    "header-subtitle": "Zostań piękniejsza już teraz!",
+    "cta-button": "Umów się na wizytę",
+    "benefit-1": "Doświadczeni specjaliści",
+    "benefit-2": "Nowoczesne technologie",
+    "benefit-3": "Indywidualne podejście",
+    "services": "Nasze usługi",
+    "testimonial": '"Jestem zachwycona! Profesjonalna obsługa i świetny efekt!" - Anna',
+    "contact": "Skontaktuj się z nami",
+    "footer": "© 2025 Salon Piękności",
+  },
+  en: {
+    "header-title": "Beauty Salon",
+    "header-subtitle": "Become more beautiful now!",
+    "cta-button": "Book your appointment",
+    "benefit-1": "Experienced specialists",
+    "benefit-2": "Modern technologies",
+    "benefit-3": "Individual approach",
+    "services": "Our Services",
+    "testimonial": '"I am delighted! Professional service and excellent results!" - Anna',
+    "contact": "Contact us",
+    "footer": "© 2025 Beauty Salon",
+  },
+  de: {
+    "header-title": "Schönheitssalon",
+    "header-subtitle": "Werde jetzt schöner!",
+    "cta-button": "Vereinbare einen Termin",
+    "benefit-1": "Erfahrene Spezialisten",
+    "benefit-2": "Moderne Technologien",
+    "benefit-3": "Individuelle Betreuung",
+    "services": "Unsere Dienstleistungen",
+    "testimonial": '"Ich bin begeistert! Professioneller Service und exzellente Ergebnisse!" - Anna',
+    "contact": "Kontaktieren Sie uns",
+    "footer": "© 2025 Schönheitssalon",
+  },
+  ru: {
+    "header-title": "Салон красоты",
+    "header-subtitle": "Станьте красивее прямо сейчас!",
+    "cta-button": "Записаться на приём",
+    "benefit-1": "Опытные специалисты",
+    "benefit-2": "Современные технологии",
+    "benefit-3": "Индивидуальный подход",
+    "services": "Наши услуги",
+    "testimonial": '"Я в восторге! Профессиональное обслуживание и отличные результаты!" - Анна',
+    "contact": "Свяжитесь с нами",
+    "footer": "© 2025 Салон красоты",
+  },
+  uk: {
+    "header-title": "Салон краси",
+    "header-subtitle": "Станьте красивішими прямо зараз!",
+    "cta-button": "Записатися на прийом",
+    "benefit-1": "Досвідчені фахівці",
+    "benefit-2": "Сучасні технології",
+    "benefit-3": "Індивідуальний підхід",
+    "services": "Наші послуги",
+    "testimonial": '"Я в захваті! Професійне обслуговування та відмінні результати!" - Анна',
+    "contact": "Зв’яжіться з нами",
+    "footer": "© 2025 Салон краси",
+  }
+};
 
-    .gallery img {
-        width: 45%;
-    }
+function changeLanguage() {
+  const language = document.getElementById("language-select").value;
+  document.getElementById("header-title").textContent = translations[language]["header-title"];
+  document.getElementById("header-subtitle").textContent = translations[language]["header-subtitle"];
+  document.getElementById("cta-button").textContent = translations[language]["cta-button"];
+  document.getElementById("benefit-1").textContent = translations[language]["benefit-1"];
+  document.getElementById("benefit-2").textContent = translations[language]["benefit-2"];
+  document.getElementById("benefit-3").textContent = translations[language]["benefit-3"];
+  document.getElementById("services").textContent = translations[language]["services"];
+  document.getElementById("testimonial").textContent = translations[language]["testimonial"];
+  document.getElementById("contact").textContent = translations[language]["contact"];
+  document.querySelector("footer p").textContent = translations[language]["footer"];
 }
-  
-</style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const flowers = document.querySelectorAll('.flower-front');
-
-    flowers.forEach((flower) => {
-        flower.style.animation = "float 3s ease-in-out infinite";
-    });
-});
-  
 </script>
+   <!-- Языковая панель -->
+  <div class="language-panel">
+    <select id="language-select" onchange="changeLanguage()">
+      <option value="pl" selected>PL</option>
+      <option value="en">EN</option>
+      <option value="de">DE</option>
+      <option value="ru">RU</option>
+      <option value="uk">UA</option>
+    </select>
+  </div>
+
+  <!-- Хедер -->
+  <header>
+    <h1 id="header-title">Salon Piękności</h1>
+    <p id="header-subtitle">Zostań piękniejsza już teraz!</p>
+    <button id="cta-button" onclick="location.href='#services'">Umów się na wizytę</button>
+  </header>
+
+  <!-- Преимущества -->
+  <section id="benefits">
+    <h2>Dlaczego my?</h2>
+    <ul>
+      <li><span class="icon">👩‍🔬</span><p id="benefit-1">Doświadczeni specjaliści</p></li>
+      <li><span class="icon">🌟</span><p id="benefit-2">Nowoczesne technologie</p></li>
+      <li><span class="icon">🌸</span><p id="benefit-3">Indywidualne podejście</p></li>
+    </ul>
+  </section>
+
+  <!-- Услуги -->
+  <section id="services">
+    <h2>Nasze usługi</h2>
+    <ul>
+      <li>Fryzjerstwo</li>
+      <li>Manicure i Pedicure</li>
+      <li>Kosmetologia</li>
+      <li>Masaże</li>
+    </ul>
+  </section>
+
+  <!-- Отзывы -->
+  <section id="testimonials">
+    <h2>Opinie naszych klientów</h2>
+    <div>
+      <p>"Jestem zachwycona! Profesjonalna obsługa i świetny efekt!" - Anna</p>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contact">
+    <h2>Skontaktuj się z nami</h2>
+    <p>Adres: ul. Piękna 12, Warszawa</p>
+    <p>Telefon: 123-456-789</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Salon Piękności</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
