@@ -1,179 +1,324 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Free Coin </title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #111;
-            color: white;
-            padding: 20px;
-            margin: 0;
-            height: 100vh;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-        .container {
-            position: relative;
-            width: 90%;
-            max-width: 800px;
-            text-align: center;
-        }
-        .instruction {
-            width: 100%;
-            height: 300px;
-            background-color: #222;
-            border: 2px solid #444;
-            border-radius: 10px;
-            padding: 20px;
-            overflow: auto;
-            color: white;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        button {
-            background-color: #222;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 40px;
-            font-size: 18px;
-        }
-        button:hover {
-            background-color: #444;
-        }
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 20px;
-            background: #222;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .open-link {
-            margin-top: 20px;
-        }
-        .open-link a {
-            color: #4CAF50;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #333;
-        }
-        .open-link a:hover {
-            background-color: #444;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Olecko Auto Service — демо</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <select id="siteSelect">
-        <option value="freenem">Hot. FreeNem</option>
-        <option value="bnbfree">1. BNB Free</option>
-        <option value="ltcfree">2. LTC Free</option>
-        <option value="btcfree">3. BTC Free</option>
-         <option value="adspace">4. ADS PACE</option>
-        <option value="Сoinfola">5. Сoinfola</option>    
-        <option value="satoshilabs">6.satoshilabs</option> 
-        <option value="cointiply">7. Cointiply</option> 
-        <option value="allcoins">8. Allcoins</option> 
-        <option value="firefaucet">9. Firefaucet</option> 
-        <option value="claimcoin">10. Claimcoin </option> 
-        <option value="cryptoflare">11. Cryptoflare</option> 
-        <option value="autofaucet">12. Autofaucet</option>    
-        <option value="faucetcrypto">13. Faucet Crypto</option>
-    </select>
-    <div class="container">
-        <div id="instruction" class="instruction">Инструкция по использованию сайта.</div>
-        <div class="controls">
-            <button onclick="prevInstruction()">&#9664;</button>
-            <button onclick="nextInstruction()">&#9654;</button>
-        </div>
-        <div class="open-link">
-            <a id="openSiteLink" href="#" target="_blank">Открыть сайт</a>
-        </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__wrap">
+      <div class="logo">Olecko<span>Auto</span>Service</div>
+      <nav class="nav" id="nav">
+        <a href="#services">Послуги</a>
+        <a href="#about">Про нас</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="menu">≡</button>
     </div>
+  </header>
 
-    <script>
-        const instructions = {
-            freenem: "FreeNem - Инструкция",
-            bnbfree: "BnB Free — Инструкция",
-            ltcfree: "LTC Free — Инструкция",
-            btcfree: "BTC Free — Инструкция",
-            adspace: "ADS Pace — Инструкция.",
-            coinfola: " Сoinfola — Инструкция.",
-            satoshilabs: "satoshilabs — Инструкция.",
-            cointiply: "cointiply — Инструкция.",
-            allcoins: "allcoins — Инструкция.",
-            firefaucet: "firefaucet — Инструкция.",        
-            claimcoin: "claimcoin— Инструкция.",
-            cryptoflare: "cryptoflare — Инструкция.",
-            autofaucet: "autofaucet — Инструкция.",
-            faucetcrypto: "Faucet Crypto — Инструкция."
-        };
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__inner container">
+      <h1>Професійний автосервіс</h1>
+      <p>Чіп-тюнінг, вихлопні системи, діагностика.</p>
+    </div>
+  </section>
 
-        const links = {
-            freenem: "https://freenem.com/?ref=380066",
-            bnbfree: "https://bnbfree.in/?r=513909",
-            ltcfree: "https://free-litecoin.com/login?referer=6702447",
-            btcfree: "https://freebitco.in/?r=54943152",
-            adspace: "https://btcadspace.com/ref/Netsavva",
-            coinfola: "https://coinfola.com/ref/Netsavva",
-            satoshilabs: "https://satoshilabs.net/?r=103213",
-            cointiply: "http://cointiply.com/r/DBVgJk",
-            allcoins: "https://allcoins.pw/?ref=734716",
-            firefaucet: "https://firefaucet.win/ref/1391813",        
-            claimcoin: "https://claimcoin.in/?r=139895",
-            cryptoflare: "https://cryptoflare.net/?r=246166",
-            autofaucet: "https://autofaucet.dutchycorp.space/?r=Netsavva",
-            faucetcrypto: "https://faucetcrypto.com/r/4305867"
-        };
+  <!-- НАШІ ПОСЛУГИ -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section__title">НАШІ ПОСЛУГИ</h2>
 
-        const sites = ["freenem","bnbfree", "ltcfree", "btcfree","adspace", "coinfola", "satoshilabs", "cointiply", "allcoins", "firefaucet", "claimcoin", "cryptoflare", "autofaucet","faucetcrypto"];
-        let currentIndex = 0;
+      <div class="services">
+        <!-- Карточка 1 -->
+        <article class="card">
+          <div class="card__img">
+            <img
+              src="https://frankfurt2.apollo.olxcdn.com/v1/files/y0zlb2rrn01q3-KZ/image;s=216x152;q=5"
+              alt="Чіп-тюнінг Stage-1"
+            />
+          </div>
+          <div class="card__content">
+            <h3 class="card__title">
+              ЧІП-ТЮНІНГ STAGE-1
+              <span class="card__arrow">[→]</span>
+            </h3>
+            <p class="card__text">
+              Безпечний чіп-тюнінг Stage 1 для збільшення потужності та крутного моменту без зміни заводських деталей.
+            </p>
+          </div>
+        </article>
 
-        const instructionElement = document.getElementById("instruction");
-        const siteSelect = document.getElementById("siteSelect");
-        const openSiteLink = document.getElementById("openSiteLink");
+        <!-- Карточка 2 -->
+        <article class="card">
+          <div class="card__img">
+            <img
+              src="https://frankfurt2.apollo.olxcdn.com/v1/files/y0zlb2rrn01q3-KZ/image;s=216x152;q=5"
+              alt="Встановлення Downpipe"
+            />
+          </div>
+          <div class="card__content">
+            <h3 class="card__title">
+              ВСТАНОВЛЕННЯ DOWNPIPE
+              <span class="card__arrow">[→]</span>
+            </h3>
+            <p class="card__text">
+              Встановлення даунпайпа для збільшення потужності двигуна і покращення вихлопних характеристик.
+            </p>
+          </div>
+        </article>
 
-        function updateInstruction(index) {
-            const site = sites[index];
-            instructionElement.innerHTML = instructions[site];
-            siteSelect.value = site;
-            openSiteLink.href = links[site]; // Обновляем ссылку для открытия сайта
-            openSiteLink.innerText = `Перейти на ${site.charAt(0).toUpperCase() + site.slice(1)}`; // Обновляем текст ссылки
-        }
+        <!-- Карточка 3 -->
+        <article class="card">
+          <div class="card__img">
+            <img
+              src="https://frankfurt2.apollo.olxcdn.com/v1/files/y0zlb2rrn01q3-KZ/image;s=216x152;q=5"
+              alt="Вихлопні системи"
+            />
+          </div>
+          <div class="card__content">
+            <h3 class="card__title">
+              ВИХЛОПНІ СИСТЕМИ
+              <span class="card__arrow">[→]</span>
+            </h3>
+            <p class="card__text">
+              Ремонт та модернізація вихлопних систем для кращого звучання та надійності.
+            </p>
+          </div>
+        </article>
 
-        function prevInstruction() {
-            currentIndex = (currentIndex === 0) ? sites.length - 1 : currentIndex - 1;
-            updateInstruction(currentIndex);
-        }
+        <!-- Карточка 4 -->
+        <article class="card">
+          <div class="card__img">
+            <img
+              src="https://frankfurt2.apollo.olxcdn.com/v1/files/y0zlb2rrn01q3-KZ/image;s=216x152;q=5"
+              alt="Діагностика"
+            />
+          </div>
+          <div class="card__content">
+            <h3 class="card__title">
+              ДІАГНОСТИКА
+              <span class="card__arrow">[→]</span>
+            </h3>
+            <p class="card__text">
+              Повна комп’ютерна діагностика для виявлення та усунення несправностей.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        function nextInstruction() {
-            currentIndex = (currentIndex === sites.length - 1) ? 0 : currentIndex + 1;
-            updateInstruction(currentIndex);
-        }
+  <!-- Про нас -->
+  <section id="about" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">ПРО НАС</h2>
+      <p class="about__text">
+        Спеціалізація: чіп-тюнінг, вихлопні системи, електроніка та діагностика. Сучасне обладнання і гарантії.
+      </p>
+    </div>
+  </section>
 
-        siteSelect.addEventListener("change", function () {
-            currentIndex = sites.indexOf(this.value);
-            updateInstruction(currentIndex);
-        });
+  <!-- Контакти -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section__title">ЗВ’ЯЗАТИСЯ З НАМИ</h2>
+      <form class="form" method="post" action="contact.php">
+        <div class="form__row">
+          <input type="text" name="name" placeholder="Ім’я" required />
+          <input type="tel" name="phone" placeholder="Телефон" required />
+        </div>
+        <textarea name="message" placeholder="Повідомлення" rows="4"></textarea>
+        <button type="submit" class="btn">Відправити</button>
+      </form>
+    </div>
+  </section>
 
-        // Инициализация с первой инструкции
-        updateInstruction(currentIndex);
-    </script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      © 2025 Olecko Auto Service
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
+
+<style> /* ===== Core ===== */
+:root{
+  --bg:#111;
+  --bg-2:#1a1a1a;
+  --text:#fff;
+  --muted:rgba(255,255,255,.7);
+  --line:rgba(255,255,255,.28);
+  --accent:#e30613;
+  --card-radius:14px;       /* для теней и скруглений контейнера */
+  --shape-gap-sm:20px;      /* внутренние "срезы" */
+  --shape-gap-lg:40px;
+  --img-offset:18px;        /* ← внешний отступ изображения внутри карточки (как просили) */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:Montserrat, Arial, sans-serif;
+  color:var(--text); background:var(--bg);
+}
+img{max-width:100%; display:block}
+.container{width:min(1200px, 100% - 40px); margin-inline:auto}
+
+/* ===== Header ===== */
+.header{background:#000; position:sticky; top:0; z-index:50}
+.header__wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.logo{font-weight:800; letter-spacing:.5px}
+.logo span{color:var(--accent)}
+.nav a{color:#fff; text-decoration:none; margin-left:20px}
+.nav a:hover{color:var(--accent)}
+.burger{display:none; background:none; border:0; color:#fff; font-size:26px}
+
+/* ===== Hero ===== */
+.hero{
+  min-height:60vh; display:grid; place-items:center;
+  background: radial-gradient(60% 80% at 70% 20%, #222 0%, #111 60%, #0c0c0c 100%);
+  border-bottom:1px solid #222;
+}
+.hero__inner{text-align:center}
+.hero h1{font-size:46px; margin:0 0 8px}
+.hero p{color:var(--muted); margin:0}
+
+/* ===== Sections ===== */
+.section{padding:64px 0}
+.section--alt{background:var(--bg-2)}
+.section__title{text-align:center; font-size:34px; margin:0 0 32px}
+
+/* ===== SERVICES GRID ===== */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(290px,1fr));
+  gap:28px;
+}
+
+/* ==== CARD with shaped frame ==== */
+.card{
+  position:relative;
+  background:#0f0f10;
+  border-radius:var(--card-radius);
+  overflow:hidden;
+  /* Строго та же фигура, что у изображения и у inner-frame */
+  clip-path:polygon(
+    var(--shape-gap-sm) 0,
+    calc(100% - var(--shape-gap-lg)) 0,
+    100% var(--shape-gap-lg),
+    100% calc(100% - var(--shape-gap-sm)),
+    calc(100% - var(--shape-gap-sm)) 100%,
+    var(--shape-gap-sm) 100%,
+    0 calc(100% - var(--shape-gap-lg)),
+    0 var(--shape-gap-sm)
+  );
+  transition:background .25s ease, transform .25s ease, filter .25s ease;
+  box-shadow:0 10px 24px rgba(0,0,0,.55);
+}
+
+/* Светлая внутренняя рамка — строго по той же форме */
+.card::before{
+  content:"";
+  position:absolute; inset:0;
+  padding:2px; /* толщина рамки */
+  background:transparent;
+  /* Рамка делается через границу + маску, чтобы оставлять контент внутри */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  border:2px solid var(--line);
+  border-radius:var(--card-radius);
+  clip-path:inherit;         /* та же форма */
+  pointer-events:none;
+}
+
+/* Изображение внутри той же формы + регулируемый отступ сверху */
+.card__img{
+  padding:var(--img-offset) var(--img-offset) 0;  /* ← внешний отступ картинки */
+}
+.card__img img{
+  width:100%; height:auto;
+  border-radius:8px;
+  /* одна и та же фигура для изображения */
+  clip-path:polygon(
+    var(--shape-gap-sm) 0,
+    calc(100% - var(--shape-gap-lg)) 0,
+    100% var(--shape-gap-lg),
+    100% 100%,
+    0 100%,
+    0 var(--shape-gap-sm)
+  );
+}
+
+/* Контент */
+.card__content{padding:20px var(--img-offset) 24px}
+.card__title{
+  margin:14px 0 12px;
+  font-size:22px; font-weight:800; letter-spacing:.5px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.card__arrow{color:var(--accent); font-weight:800}
+.card__text{color:var(--muted); margin:0; line-height:1.55}
+
+/* Hover/active: красная заливка, белый текст/стрелка */
+.card:hover{
+  background:var(--accent);
+  transform:translateY(-6px);
+  filter:saturate(1.05);
+}
+.card:hover::before{border-color:var(--accent)}
+.card:hover .card__arrow{color:#fff}
+.card:hover .card__text{color:#fff}
+
+/* ===== About / Form / Footer ===== */
+.about__text{color:var(--muted); text-align:center; max-width:880px; margin:0 auto}
+.form{display:flex; flex-direction:column; gap:16px; max-width:740px; margin:0 auto}
+.form__row{display:flex; gap:12px; flex-wrap:wrap}
+.form input,.form textarea{
+  flex:1 1 260px; background:#0f0f10; border:1px solid #2b2b2b; color:#fff;
+  padding:14px 16px; border-radius:10px; outline:none;
+}
+.form input:focus,.form textarea:focus{border-color:var(--accent)}
+.btn{
+  align-self:flex-start; background:var(--accent); border:0; color:#fff; padding:12px 22px;
+  border-radius:10px; cursor:pointer; font-weight:700;
+}
+.footer{padding:28px 0; text-align:center; color:var(--muted); border-top:1px solid #222}
+
+/* ===== Responsive ===== */
+@media (max-width: 880px){
+  .burger{display:block}
+  .nav{display:none}
+  .nav.is-open{display:block; position:absolute; right:20px; top:60px; background:#000; padding:12px 16px; border-radius:8px}
+  .nav a{display:block; padding:6px 0}
+}
+
+</style>
+
+<script> // Простое бургер-меню
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+
+if (burger && nav) {
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('is-open');
+  });
+}
+
+// Можно быстро «подкрутить» внешний отступ картинки на лету:
+// document.documentElement.style.setProperty('--img-offset', '24px');</script>
+
