@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="uk">
+  
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'uk',  // язык исходной страницы
+    includedLanguages: 'pl,en,ru', // доступные языки
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+
+// Авто-перевод на польский после загрузки страницы
+function triggerTranslateToPL() {
+  const plButtonSelector = 'select.goog-te-combo';
+  const interval = setInterval(() => {
+    const combo = document.querySelector(plButtonSelector);
+    if (combo) {
+      combo.value = 'pl';
+      combo.dispatchEvent(new Event('change'));
+      clearInterval(interval);
+    }
+  }, 500);
+}
+</script>
+
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+<script>
+window.addEventListener('load', () => {
+  triggerTranslateToPL();
+});
+</script>
+
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Olecko Auto Service — демо</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+<div id="google_translate_element" style="display:none;"></div>
 
   <!-- Header -->
   <header class="header">
@@ -321,4 +357,5 @@ if (burger && nav) {
 
 // Можно быстро «подкрутить» внешний отступ картинки на лету:
 // document.documentElement.style.setProperty('--img-offset', '24px');</script>
+
 
