@@ -1,7 +1,9 @@
 <?php
-// Определяем язык из GET (?lang=pl / ?lang=ru / ?lang=uk)
-$lang = $_GET['lang'] ?? 'pl';
-if (!in_array($lang, ['pl','ru','uk'])) $lang = 'pl';
+// Определяем язык через GET-параметр, например: index.php?lang=pl
+$lang = $_GET['lang'] ?? 'uk'; // по умолчанию — украинский
+if (!in_array($lang, ['pl','ru','uk'])) $lang = 'uk';
+
+// Подключаем файл с языковыми данными из папки /lang
 $messages = require __DIR__ . "/lang/$lang.php";
 ?>
 <!DOCTYPE html>
