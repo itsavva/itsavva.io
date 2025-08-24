@@ -1,60 +1,203 @@
-
 <!DOCTYPE html>
-<html lang="<?= $lang ?>">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title><?= $messages['site_title'] ?></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olecko Auto Service — Profesjonalny Serwis Samochodowy</title>
 
-  <style>
-    /* ===== ТВОИ стили как есть ===== */
-    :root{ --bg:#111; --bg-2:#1a1a1a; --text:#fff; ... }
-    /* и так далее *//* ===== Core ===== */ :root{ --bg:#111; --bg-2:#1a1a1a; --text:#fff; --muted:rgba(255,255,255,.7); --line:rgba(255,255,255,.28); --accent:#e30613; --card-radius:14px; /* для теней и скруглений контейнера */ --shape-gap-sm:20px; /* внутренние "срезы" */ --shape-gap-lg:40px; --img-offset:18px; /* ← внешний отступ изображения внутри карточки (как просили) */ } *{box-sizing:border-box} html,body{height:100%} body{ margin:0; font-family:Montserrat, Arial, sans-serif; color:var(--text); background:var(--bg); } img{max-width:100%; display:block} .container{width:min(1200px, 100% - 40px); margin-inline:auto} /* ===== Header ===== */ .header{background:#000; position:sticky; top:0; z-index:50} .header__wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0} .logo{font-weight:800; letter-spacing:.5px} .logo span{color:var(--accent)} .nav a{color:#fff; text-decoration:none; margin-left:20px} .nav a:hover{color:var(--accent)} .burger{display:none; background:none; border:0; color:#fff; font-size:26px} /* ===== Hero ===== */ .hero{ min-height:60vh; display:grid; place-items:center; background: radial-gradient(60% 80% at 70% 20%, #222 0%, #111 60%, #0c0c0c 100%); border-bottom:1px solid #222; } .hero__inner{text-align:center} .hero h1{font-size:46px; margin:0 0 8px} .hero p{color:var(--muted); margin:0} /* ===== Sections ===== */ .section{padding:64px 0} .section--alt{background:var(--bg-2)} .section__title{text-align:center; font-size:34px; margin:0 0 32px} /* ===== SERVICES GRID ===== */ .services{ display:grid; grid-template-columns:repeat(auto-fit, minmax(290px,1fr)); gap:28px; } /* ==== CARD with shaped frame ==== */ .card{ position:relative; background:#0f0f10; border-radius:var(--card-radius); overflow:hidden; /* Строго та же фигура, что у изображения и у inner-frame */ clip-path:polygon( var(--shape-gap-sm) 0, calc(100% - var(--shape-gap-lg)) 0, 100% var(--shape-gap-lg), 100% calc(100% - var(--shape-gap-sm)), calc(100% - var(--shape-gap-sm)) 100%, var(--shape-gap-sm) 100%, 0 calc(100% - var(--shape-gap-lg)), 0 var(--shape-gap-sm) ); transition:background .25s ease, transform .25s ease, filter .25s ease; box-shadow:0 10px 24px rgba(0,0,0,.55); } /* Светлая внутренняя рамка — строго по той же форме */ .card::before{ content:""; position:absolute; inset:0; padding:2px; /* толщина рамки */ background:transparent; /* Рамка делается через границу + маску, чтобы оставлять контент внутри */ -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; border:2px solid var(--line); border-radius:var(--card-radius); clip-path:inherit; /* та же форма */ pointer-events:none; } /* Изображение внутри той же формы + регулируемый отступ сверху */ .card__img{ padding:var(--img-offset) var(--img-offset) 0; /* ← внешний отступ картинки */ } .card__img img{ width:100%; height:auto; border-radius:8px; /* одна и та же фигура для изображения */ clip-path:polygon( var(--shape-gap-sm) 0, calc(100% - var(--shape-gap-lg)) 0, 100% var(--shape-gap-lg), 100% 100%, 0 100%, 0 var(--shape-gap-sm) ); } /* Контент */ .card__content{padding:20px var(--img-offset) 24px} .card__title{ margin:14px 0 12px; font-size:22px; font-weight:800; letter-spacing:.5px; display:flex; align-items:center; justify-content:space-between; gap:12px; } .card__arrow{color:var(--accent); font-weight:800} .card__text{color:var(--muted); margin:0; line-height:1.55} /* Hover/active: красная заливка, белый текст/стрелка */ .card:hover{ background:var(--accent); transform:translateY(-6px); filter:saturate(1.05); } .card:hover::before{border-color:var(--accent)} .card:hover .card__arrow{color:#fff} .card:hover .card__text{color:#fff} /* ===== About / Form / Footer ===== */ .about__text{color:var(--muted); text-align:center; max-width:880px; margin:0 auto} .form{display:flex; flex-direction:column; gap:16px; max-width:740px; margin:0 auto} .form__row{display:flex; gap:12px; flex-wrap:wrap} .form input,.form textarea{ flex:1 1 260px; background:#0f0f10; border:1px solid #2b2b2b; color:#fff; padding:14px 16px; border-radius:10px; outline:none; } .form input:focus,.form textarea:focus{border-color:var(--accent)} .btn{ align-self:flex-start; background:var(--accent); border:0; color:#fff; padding:12px 22px; border-radius:10px; cursor:pointer; font-weight:700; } .footer{padding:28px 0; text-align:center; color:var(--muted); border-top:1px solid #222} /* ===== Responsive ===== */ @media (max-width: 880px){ .burger{display:block} .nav{display:none} .nav.is-open{display:block; position:absolute; right:20px; top:60px; background:#000; padding:12px 16px; border-radius:8px} .nav a{display:block; padding:6px 0} }
-  </style>
+<!-- Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'pl',
+    includedLanguages: 'pl,ru,en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+function triggerTranslateToPL() {
+  const comboSelector = 'select.goog-te-combo';
+  const interval = setInterval(() => {
+    const combo = document.querySelector(comboSelector);
+    if(combo){ combo.value='pl'; combo.dispatchEvent(new Event('change')); clearInterval(interval); }
+  }, 500);
+}
+window.addEventListener('load', triggerTranslateToPL);
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  <?php
-// Определяем язык через GET-параметр, например: index.php?lang=pl
-$lang = $_GET['lang'] ?? 'uk'; // по умолчанию — украинский
-if (!in_array($lang, ['pl','ru','uk'])) $lang = 'uk';
+<style>
+:root{
+  --bg:#111; --bg-alt:#1a1a1a; --text:#fff; --muted:#ccc; --accent:#e30613;
+  --card-radius:14px; --gap:20px; --img-offset:18px;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:Montserrat, sans-serif;color:var(--text);background:var(--bg);}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+.container{width:min(1200px,90%);margin:0 auto;}
 
-// Подключаем файл с языковыми данными из папки /lang
-$messages = require __DIR__ . "/lang/$lang.php";
-?>
+/* Header */
+.header{background:#000;position:sticky;top:0;z-index:50;}
+.header__wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 0;}
+.logo{font-weight:800;letter-spacing:.5px;} .logo span{color:var(--accent);}
+.nav a{margin-left:20px;color:#fff;} .nav a:hover{color:var(--accent);}
+.burger{display:none;font-size:26px;background:none;border:none;color:#fff;}
+
+/* Hero */
+.hero{min-height:60vh;display:grid;place-items:center;background:radial-gradient(60% 80% at 70% 20%, #222 0%, #111 60%, #0c0c0c 100%);text-align:center;}
+.hero h1{font-size:46px;margin:0 0 12px;} .hero p{color:var(--muted);font-size:18px;}
+
+/* Sections */
+.section{padding:64px 0;} .section--alt{background:var(--bg-alt);}
+.section__title{text-align:center;font-size:34px;margin-bottom:32px;}
+
+/* Services Grid */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;}
+.card{position:relative;background:#0f0f10;border-radius:var(--card-radius);overflow:hidden;clip-path:polygon(var(--gap) 0,calc(100% - var(--gap)) 0,100% var(--gap),100% calc(100% - var(--gap)),calc(100% - var(--gap)) 100%,var(--gap) 100%,0 calc(100% - var(--gap)),0 var(--gap));transition:all .25s ease;box-shadow:0 10px 24px rgba(0,0,0,.55);}
+.card::before{content:"";position:absolute;inset:0;padding:2px;background:transparent;mask-composite:exclude;border:2px solid rgba(255,255,255,.28);clip-path:inherit;pointer-events:none;}
+.card__img{padding:var(--img-offset);clip-path:inherit;}
+.card__img img{border-radius:8px;}
+.card__content{padding:20px var(--img-offset) 24px;}
+.card__title{margin:14px 0 12px;font-size:22px;font-weight:800;display:flex;justify-content:space-between;align-items:center;}
+.card__arrow{color:var(--accent);font-weight:800;}
+.card__text{color:var(--muted);line-height:1.55;}
+.card:hover{background:var(--accent);transform:translateY(-6px);filter:saturate(1.05);}
+.card:hover::before{border-color:var(--accent);}
+.card:hover .card__arrow{color:#fff;} .card:hover .card__text{color:#fff;}
+
+/* About */
+.about__text{max-width:880px;margin:0 auto;color:var(--muted);text-align:center;}
+
+/* Form */
+.form{display:flex;flex-direction:column;gap:16px;max-width:740px;margin:0 auto;}
+.form__row{display:flex;gap:12px;flex-wrap:wrap;}
+.form input,.form textarea{flex:1 1 260px;background:#0f0f10;border:1px solid #2b2b2b;color:#fff;padding:14px 16px;border-radius:10px;outline:none;}
+.form input:focus,.form textarea:focus{border-color:var(--accent);}
+.btn{background:var(--accent);color:#fff;padding:12px 22px;border:none;border-radius:10px;cursor:pointer;font-weight:700;align-self:flex-start;}
+
+/* Footer */
+.footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid #222;}
+
+/* Responsive */
+@media(max-width:880px){.burger{display:block}.nav{display:none}.nav.is-open{display:block;position:absolute;right:20px;top:60px;background:#000;padding:12px 16px;border-radius:8px}.nav a{display:block;padding:6px 0;}}
+</style>
 </head>
 <body>
+<div id="google_translate_element" style="display:none;"></div>
+
+<!-- Header -->
 <header class="header">
-  <div class="header__wrap container">
-    <div class="logo">Olecko<span>Auto</span>Serwis</div>
+  <div class="container header__wrap">
+    <div class="logo">Olecko<span>Auto</span>Service</div>
     <nav class="nav" id="nav">
-      <a href="#services"><?= $messages['nav_services'] ?></a>
-      <a href="#about"><?= $messages['nav_about'] ?></a>
-      <a href="#contact"><?= $messages['nav_contact'] ?></a>
+      <a href="#services">Usługi</a>
+      <a href="#about">O nas</a>
+      <a href="#testimonials">Opinie</a>
+      <a href="#contact">Kontakt</a>
     </nav>
-    <button class="burger" id="burger">☰</button>
+    <button class="burger" id="burger" aria-label="menu">≡</button>
   </div>
 </header>
 
+<!-- Hero -->
 <section class="hero">
-  <div class="hero__inner">
-    <h1><?= $messages['hero_title'] ?></h1>
-    <p><?= $messages['hero_subtitle'] ?></p>
+  <div class="hero__inner container">
+    <h1>Profesjonalny Serwis Samochodowy w Olecku</h1>
+    <p>Chiptuning, systemy wydechowe, diagnostyka i kompleksowy serwis.</p>
   </div>
 </section>
 
-<!-- дальше твои блоки с <?= $messages['ключ'] ?> -->
+<!-- Services -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section__title">Nasze Usługi</h2>
+    <div class="services">
+      <article class="card">
+        <div class="card__img"><img src="https://frankfurt2.apollo.olxcdn.com/v1/files/y0zlb2rrn01q3-KZ/image;s=216x152;q=5" alt="Chiptuning Stage-1"></div>
+        <div class="card__content">
+          <h3 class="card__title">Chiptuning Stage-1 <span class="card__arrow">[→]</span></h3>
+          <p class="card__text">Bezpieczny chiptuning zwiększający moc i moment obrotowy bez zmian fabrycznych.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__img"><img src="https://frankfurt2.apollo.olxcdn.com/v1/files/y0zlb2rrn01q3-KZ/image;s=216x152;q=5" alt="Downpipe"></div>
+        <div class="card__content">
+          <h3 class="card__title">Instalacja Downpipe <span class="card__arrow">[→]</span></h3>
+          <p class="card__text">Zwiększenie mocy silnika i poprawa wydajności układu wydechowego.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__img"><img src="https://frankfurt2.apollo.olxcdn.com/v1/files/y0zlb2rrn01q3-KZ/image;s=216x152;q=5" alt="Diagnostyka"></div>
+        <div class="card__content">
+          <h3 class="card__title">Diagnostyka Komputerowa <span class="card__arrow">[→]</span></h3>
+          <p class="card__text">Pełna diagnostyka elektroniczna w celu wykrycia i usunięcia usterek.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
+<!-- About -->
+<section id="about" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">O Nas</h2>
+    <p class="about__text">
+      Olecko Auto Service to nowoczesny serwis samochodowy oferujący kompleksowe usługi: chiptuning, diagnostyka, naprawa układów wydechowych oraz elektroniki. Nasz zespół wykwalifikowanych specjalistów gwarantuje profesjonalną obsługę i pełną satysfakcję.
+    </p>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <h2 class="section__title">Opinie Klientów</h2>
+    <div class="services">
+      <article class="card">
+        <div class="card__content">
+          <h3 class="card__title">Jan K. <span class="card__arrow">[→]</span></h3>
+          <p class="card__text">Szybka i profesjonalna obsługa, mój samochód działa lepiej niż kiedykolwiek!</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__content">
+          <h3 class="card__title">Anna M. <span class="card__arrow">[→]</span></h3>
+          <p class="card__text">Świetny serwis, fachowa diagnostyka i przyjazna obsługa.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Kontakt</h2>
+    <form class="form" method="post" action="contact.php">
+      <div class="form__row">
+        <input type="text" name="name" placeholder="Imię" required>
+        <input type="tel" name="phone" placeholder="Telefon" required>
+      </div>
+      <textarea name="message" placeholder="Wiadomość" rows="4"></textarea>
+      <button type="submit" class="btn">Wyślij</button>
+    </form>
+    <p style="text-align:center;margin-top:20px;color:var(--muted);">
+      Tel: +48 000 000 00 | ul. Olecka kolonia 1, Olecko, Polska
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="footer">
-  <p><?= $messages['footer'] ?></p>
+  <div class="container">
+    © 2025 Olecko Auto Service
+  </div>
 </footer>
 
 <script>
-  // ===== ТВОЙ JS как есть =====
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('nav');
-  if (burger && nav) {
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('is-open');
-    });
-  }
-   <script> // Простое бургер-меню const burger = document.getElementById('burger'); const nav = document.getElementById('nav'); if (burger && nav) { burger.addEventListener('click', () => { nav.classList.toggle('is-open'); }); } // Можно быстро «подкрутить» внешний отступ картинки на лету: // document.documentElement.style.setProperty('--img-offset', '24px');</script></script>
+// Burger menu
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+burger.addEventListener('click', () => {nav.classList.toggle('is-open');});
+</script>
 </body>
 </html>
