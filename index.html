@@ -63,26 +63,29 @@ a{text-decoration:none;color:inherit;}
 /* Responsive */
 @media(max-width:880px){.burger{display:block}.nav{display:none}.nav.is-open{display:block;position:absolute;right:20px;top:60px;background:#000;padding:12px 16px;border-radius:8px}.nav a{display:block;padding:6px 0;}}
 </style>
+<script>
+    fetch("widget.json")
+      .then(r => r.json())
+      .then(data => {
+        // вставляем HTML+CSS
+        document.getElementById("import-here").innerHTML = data.code;
+
+        // активируем <script> внутри
+        document.querySelectorAll("#import-here script").forEach(s => {
+          let ns = document.createElement("script");
+          ns.textContent = s.textContent;
+          document.body.appendChild(ns);
+          s.remove();
+        });
+      });
+  </script>
 </head>
 <body>
 
 <!-- Header -->
 <header class="header">
-  <div class="container header__wrap">
-    <div class="logo">Olecko<span>Auto</span>Service</div>
-    <nav class="nav" id="nav">
-      <a href="#services" class="lang" data-key="nav-services">Usługi</a>
-      <a href="#about" class="lang" data-key="nav-about">O nas</a>
-      <a href="#testimonials" class="lang" data-key="nav-testimonials">Opinie</a>
-      <a href="#contact" class="lang" data-key="nav-contact">Kontakt</a>
-    </nav>
-    <div class="lang-switch">
-      <button data-lang="pl">PL</button>
-      <button data-lang="ru">RU</button>
-      <button data-lang="en">EN</button>
-    </div>
-    <button class="burger" id="burger" aria-label="menu">≡</button>
-  </div>
+<div id="import-here"></div>
+ 
 </header>
 
 <!-- Hero -->
@@ -90,6 +93,7 @@ a{text-decoration:none;color:inherit;}
   <div class="hero__inner container">
     <h1 class="lang" data-key="hero-title">Profesjonalny Serwis Samochodowy</h1>
     <p class="lang" data-key="hero-desc">Chiptuning, systemy wydechowe, diagnostyka i kompleksowy serwis.</p>
+	 <button src="" class="btn lang" data-key="konsultacja-btn">Bezpłatna konsultacja</button>
   </div>
 </section>
 
@@ -167,7 +171,7 @@ a{text-decoration:none;color:inherit;}
       <button type="submit" class="btn lang" data-key="contact-btn">Wyślij</button>
     </form>
     <p style="text-align:center;margin-top:20px;color:var(--muted);">
-      Tel: +48 794 538 027| Polska, Olecko ul.Kolonia 1 
+      Tel: +48 000 000 000 | Polska, Olecko ul.Kolonia 1 
     </p>
   </div>
 </section>
@@ -175,8 +179,8 @@ a{text-decoration:none;color:inherit;}
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
-    © 2025 Olecko Auto Service</br>
-    Entwickelt von SAVVA NET
+    <span data-key="brend" class="lang"> © 2025 Olecko Auto Serwis</span></br>
+    <span data-key="autor" class="lang"> Projekt został stworzony SAVVA NET</span>
   </div>
 </footer>
 
@@ -209,7 +213,10 @@ const translations = {
   "test-anna": {pl:"Anna M.", ru:"Анна М.", en:"Anna M."},
   "test-anna-desc": {pl:"Świetny serwis, fachowa diagnostyka i przyjazna obsługa.", ru:"Отличный сервис, профессиональная диагностика и дружелюбное обслуживание.", en:"Great service, expert diagnostics and friendly staff."},
   "contact-title": {pl:"Kontakt", ru:"Контакты", en:"Contact"},
-  "contact-btn": {pl:"Wyślij", ru:"Отправить", en:"Send"}
+  "contact-btn": {pl:"Wyślij", ru:"Отправить", en:"Send"},
+ "brend": {pl:"© 2025 Olecko Auto Serwis", ru:"© 2025 Олецко Автосервис", en:"© 2025 Olecko Auto Service"},
+ "autor": {pl:"Projekt został stworzony SAVVA NET", ru:"Этот проект был создан SAVVA NET", en:"This project was created SAVVA NET"},
+  "konsultacja-btn": {pl:"Bezpłatna konsultacja", ru:"Бесплатная консультация", en:"Free consultation"}
 };
 
 document.querySelectorAll('.lang-switch button').forEach(btn=>{
@@ -225,4 +232,5 @@ document.querySelectorAll('.lang-switch button').forEach(btn=>{
 
 </body>
 </html>
+
 
