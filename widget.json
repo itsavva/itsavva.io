@@ -1,0 +1,3 @@
+{
+  "code": " <div class="container header__wrap"><div class="logo">Olecko<span>Auto</span>Service</div><nav class="nav" id="nav"><a href="#services" class="lang" data-key="nav-services">Usługi</a><a href="#about" class="lang" data-key="nav-about">O nas</a><a href="#testimonials" class="lang" data-key="nav-testimonials">Opinie</a><a href="#contact" class="lang" data-key="nav-contact">Kontakt</a></nav><div class="lang-switch"><button data-lang="pl">PL</button><button data-lang="ru">RU</button><button data-lang="en">EN</button></div><button class="burger" id="burger" aria-label="menu">≡</button></div>"
+}
