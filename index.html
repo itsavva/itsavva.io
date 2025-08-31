@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e30613">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	
 <title>Olecko Auto Service</title>
 <style>
+	/* Вся полоса */
+::-webkit-scrollbar {
+    width: 12px; /* ширина полосы */
+}
+
+/* Ползунок */
+::-webkit-scrollbar-thumb {
+    background-color: #e30613; /* цвет ползунка */
+    border-radius: 6px;        /* закругление */
+}
+
+/* Фон скроллбара */
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* цвет дорожки */
+}
+
+
+
+	
 :root{
   --bg:#111; --bg-alt:#1a1a1a; --text:#fff; --muted:#ccc; --accent:#e30613;
   --card-radius:14px; --gap:20px; --img-offset:18px;
@@ -181,14 +204,15 @@ a{text-decoration:none;color:inherit;}
       <article class="card">
         <div class="card__img"><img src="https://sphinx-plus.com/wp-content/uploads/2022/12/diagnostic_bosh.png" alt="Downpipe"></div>
         <div class="card__content">
-          <h3 class="card__title lang" data-key="service-downpipe">Diagnostyka<span class="card__arrow">[→]</span></h3>Diagnostyka układu jezdnego. Linia kontroli stanu technicznego układu jezdnego samochodu zapewni Państwu obiektywne i udokumentowane informacje.Zwiększenie mocy silnika i poprawa wydajności układu wydechowego.</p>
+          <h3 class="card__title lang" data-key="service-Diagnostyka">Diagnostyka<span class="card__arrow">[→]</span></h3>
+			<p class="card__text lang" data-key="service-Diagnostyka-desc"> Diagnostyka układu jezdnego. Linia kontroli stanu technicznego układu jezdnego samochodu zapewni Państwu obiektywne i udokumentowane informacje.Zwiększenie mocy silnika i poprawa wydajności układu wydechowego.</p>
         </div>
       </article>
       <article class="card">
         <div class="card__img"><img src="https://sphinx-plus.com/wp-content/uploads/2022/12/oil_mobil1.png" alt="Diagnostyka"></div>
         <div class="card__content">
-          <h3 class="card__title lang" data-key="service-diagnosis">Wymiana oleju<span class="card__arrow">[→]</span></h3>
-          <p class="card__text lang" data-key="service-diagnosis-desc"> Wymiana oleju . W naszym centrum wykonujemy szybką i wysokiej jakości wymianę oleju, płynów technicznych i filtrów.</p>
+          <h3 class="card__title lang" data-key="service-oleju">Wymiana oleju<span class="card__arrow">[→]</span></h3>
+          <p class="card__text lang" data-key="service-oleju-desc"> Wymiana oleju . W naszym centrum wykonujemy szybką i wysokiej jakości wymianę oleju, płynów technicznych i filtrów.</p>
         </div>
       </article>
 	        <article class="card">
@@ -291,10 +315,10 @@ const translations = {
  "services-title": {pl:"Nasze Usługi", ru:"Наши услуги", en:"Our Services"},
   "service-repair": {pl:"Naprawa układu jezdnego", ru:"Ремонт ходовой части", en:"Chassis repair"},
   "service-repair-desc": {pl:"Wykonujemy profesjonalne naprawy układu jezdnego samochodów o dowolnym stopniu złożoności. Wieloletnie doświadczenie. Posiadamy specjalistyczny sprzęt. Gwarancja na świadczone usługi.",ru:"Мы выполняем профессиональный ремонт ходовой части автомобилей любой степени сложности. Многолетний опыт. Имеем специализированное оборудование. Гарантия на предоставляемые услуги.", en:"We perform professional chassis repairs for vehicles of any complexity. Many years of experience. We have specialized equipment. Guarantee for services provided."},
-  "service-downpipe": {pl:"Instalacja Downpipe", ru:"Установка Downpipe", en:"Downpipe Installation"},
-  "service-downpipe-desc": {pl:"Zwiększenie mocy silnika i poprawa wydajności układu wydechowego.", ru:"Увеличение мощности двигателя и улучшение характеристик выхлопа.", en:"Increase engine power and improve exhaust performance."},
-  "service-diagnosis": {pl:"Diagnostyka Komputerowa", ru:"Компьютерная диагностика", en:"Computer Diagnostics"},
-  "service-diagnosis-desc": {pl:"Pełna diagnostyka elektroniczna w celu wykrycia i usunięcia usterek.", ru:"Полная компьютерная диагностика для выявления и устранения неисправностей.", en:"Full electronic diagnostics to detect and fix issues."},
+  "service-Diagnostyka": {pl:"Diagnostyka ", ru:"Диагностика", en:"Diagnostyka"},
+  "service-Diagnostyka-desc": {pl:"Diagnostyka układu jezdnego. Linia kontroli stanu technicznego układu jezdnego samochodu zapewni Państwu obiektywne i udokumentowane informacje.Zwiększenie mocy silnika i poprawa wydajności układu wydechowego.", ru:"Диагностика ходовой части. Линия контроля технического состояния ходовой части автомобиля предоставит вам объективную и документально подтвержденную информацию. Увеличение мощности двигателя и улучшение производительности выхлопной системы.", en:"Diagnostics of the drive system. The technical condition inspection line for the car's drive system will provide you with objective and documented information. Increased engine power and improved exhaust system efficiency."},
+  "service-oleju": {pl:"Wymiana oleju", ru:"Замена масла", en:"Oil change"},
+  "service-oleju-desc": {pl:"Wymiana oleju . W naszym centrum wykonujemy szybką i wysokiej jakości wymianę oleju, płynów technicznych i filtrów.", ru:"Замена масла . В нашем центре мы выполняем быструю и качественную замену масла, технических жидкостей и фильтров.", en:"Oil change. At our center, we perform quick and high-quality oil, technical fluid, and filter changes."},
   
    "service-Parts-Department": {pl:"Dział części zamiennych", ru:"Отдел запасных частей", en:"Spare Parts Department"},
   "service-Parts-Department-desc": {pl:"Kierownik działu części zamiennych pomoże dobrać każdą część do Twojego samochodu, zarówno oryginalną, jak i analogiczną, dostępną w magazynie lub na zamówienie. Na każdy produkt zakupiony w dziale udzielana jest gwarancja.", ru:"Полная компьютерная диагностика для выявления и устранения неисправностей.", en:"Full electronic diagnostics to detect and fix issues."},
@@ -330,5 +354,6 @@ document.querySelectorAll('.lang-switch button').forEach(btn=>{
 
 </body>
 </html>
+
 
 
