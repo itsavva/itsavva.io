@@ -122,6 +122,23 @@ a{text-decoration:none;color:inherit;}
       color: white;
     }
 
+
+
+	.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#e30613 1px, transparent 1px),
+                    linear-gradient(90deg, #e30613 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridmove 10s linear infinite;
+  opacity: 0.4;
+}
+
+/* движение сетки */
+@keyframes gridmove {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 50px 50px, 50px 50px; }
+}
 </style>
 
 <script>
@@ -144,7 +161,7 @@ a{text-decoration:none;color:inherit;}
 <body>
 
 <!-- Header -->
-<header class="header">
+<header class="grid-overlay" class="header">
 
   <div class="container header__wrap">
     <div class="logo">Olecko<span>Auto</span>Service</div>
@@ -164,15 +181,7 @@ a{text-decoration:none;color:inherit;}
 </header>
 
 <!-- Hero -->
-<div class="video-background">
-    <iframe src="https://www.youtube.com/embed/VghSI5mrNPE?autoplay=1&mute=1&loop=1&playlist=VghSI5mrNPE&controls=0&modestbranding=1"
-            frameborder="0"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
-    </iframe>
-  </div>
 
-  <div class="overlay"></div>
   <div class="container">
   <section class="hero">
 
@@ -354,6 +363,7 @@ document.querySelectorAll('.lang-switch button').forEach(btn=>{
 
 </body>
 </html>
+
 
 
 
